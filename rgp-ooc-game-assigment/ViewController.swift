@@ -10,16 +10,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //IBOutlets
+    @IBOutlet weak var randomQuoteMessage: UILabel!
+    
+    
+    
+    
+    //Variables
+    
+    var playerPo: Po!
+    var quotes: String?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        playerPo = Po(charName: "Po", charHp: 98, charAttackPwr: 32, charGraphic: "po")
+        
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func showRndQuoate(sender: AnyObject) {
+        quotes = playerPo.showFunPhrase()
+        randomQuoteMessage.text = "\(quotes!)"
     }
-
 
 }
 

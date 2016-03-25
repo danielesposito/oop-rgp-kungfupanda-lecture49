@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="rgp_ooc_game_assigment" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,89 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="palacebg" translatesAutoresizingMaskIntoConstraints="NO" id="DJP-sT-nLQ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DJP-sT-nLQ" secondAttribute="height" multiplier="1:1" id="boZ-nt-uW6"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="po" translatesAutoresizingMaskIntoConstraints="NO" id="SPi-SR-Y2H">
+                                <rect key="frame" x="20" y="396" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="28S-RV-bb2"/>
+                                    <constraint firstAttribute="width" constant="170" id="hSu-8s-Uff"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mastershifu" translatesAutoresizingMaskIntoConstraints="NO" id="ZNy-dM-km2">
+                                <rect key="frame" x="444" y="430" width="136" height="136"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="Pht-kU-mS9"/>
+                                    <constraint firstAttribute="width" constant="136" id="eUg-Oe-L5R"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QE1-ph-pVp">
+                                <rect key="frame" x="234" y="520" width="133" height="30"/>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.50588235290000005" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="133" id="5qq-pf-9TX"/>
+                                    <constraint firstAttribute="height" constant="30" id="Htn-4L-M6b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="QUOTE">
+                                    <color key="titleColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showRndQuoate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t1u-F9-1lE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izT-mK-MWR">
+                                <rect key="frame" x="159" y="323" width="283" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="PFr-Ka-UrH"/>
+                                    <constraint firstAttribute="width" constant="283" id="abV-1W-AaQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DJP-sT-nLQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3Kg-N6-ePc"/>
+                            <constraint firstAttribute="trailing" secondItem="DJP-sT-nLQ" secondAttribute="trailing" id="7WA-jD-2Pe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QE1-ph-pVp" secondAttribute="bottom" constant="50" id="9mU-sH-xUH"/>
+                            <constraint firstAttribute="trailing" secondItem="ZNy-dM-km2" secondAttribute="trailing" constant="20" id="AqM-vn-faV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZNy-dM-km2" secondAttribute="bottom" constant="34" id="Nn3-vS-ec6"/>
+                            <constraint firstItem="QE1-ph-pVp" firstAttribute="top" secondItem="izT-mK-MWR" secondAttribute="bottom" constant="111" id="Q6D-K8-Qe9"/>
+                            <constraint firstItem="DJP-sT-nLQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Vl1-IE-n0a"/>
+                            <constraint firstItem="SPi-SR-Y2H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Y8h-Js-Aq7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SPi-SR-Y2H" secondAttribute="bottom" constant="34" id="Ykn-aV-42W"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DJP-sT-nLQ" secondAttribute="bottom" id="ZGW-pF-awR"/>
+                            <constraint firstItem="izT-mK-MWR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hEd-7h-H9Y"/>
+                            <constraint firstItem="QE1-ph-pVp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nGK-vd-M1c"/>
+                            <constraint firstItem="QE1-ph-pVp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nwc-rJ-j1J"/>
+                            <constraint firstItem="SPi-SR-Y2H" firstAttribute="top" secondItem="izT-mK-MWR" secondAttribute="bottom" constant="53" id="p7q-fp-tK5"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="p7q-fp-tK5"/>
+                                <exclude reference="nGK-vd-M1c"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="randomQuoteMessage" destination="izT-mK-MWR" id="BiU-0J-7j9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="325" y="387"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mastershifu" width="256" height="256"/>
+        <image name="palacebg" width="1920" height="818"/>
+        <image name="po" width="256" height="256"/>
+    </resources>
 </document>
