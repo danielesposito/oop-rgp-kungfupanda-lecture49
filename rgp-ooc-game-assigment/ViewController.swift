@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     
     
     //Variables
-    
     var playerPo: Po!
     var quotes: String?
     
@@ -29,7 +28,7 @@ class ViewController: UIViewController {
         
         
     }
-
+    //Actions
     @IBAction func showRndQuoate(sender: AnyObject) {
         quotes = playerPo.showFunPhrase()
         randomQuoteMessage.text = "\(quotes!)"
