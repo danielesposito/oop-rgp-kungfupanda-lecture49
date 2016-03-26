@@ -22,17 +22,19 @@ class ViewController: UIViewController {
     //Variables
     var playerPo: Po!
     var quotes: String?
-    
+    var randomHealthStart: UInt32 = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        playerPo = Po(charName: "Po", hp: 98, attPwr: 32, charGraphic: "po")
+        randomHealthStart = arc4random_uniform(50) + 150
+        
+        playerPo = Po(charName: "Po", hp: Int(randomHealthStart), attPwr: 32, charGraphic: "po")
         
         
         playerANameALabel.text = "Player \(playerPo.name)"
         playerAHealthLabel.text = "Health: \(playerPo.hp)"
-        playerACurrentAttPwr.text = "AttPwr: \(playerPo.randomNumber)"
+        playerACurrentAttPwr.text = "AttPwr: \(playerPo.poRandomNumber)"
     
         
     }

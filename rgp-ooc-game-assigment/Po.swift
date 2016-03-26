@@ -27,6 +27,9 @@ class Po: Character {
         return "po"
     }
 
-
+    var poRandomNumber: UInt32 {
+        
+        return makeRandAttPwrNumber()
+    }
     
 }
