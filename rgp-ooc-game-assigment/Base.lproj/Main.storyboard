@@ -114,12 +114,14 @@
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyH-1K-wLB">
                                         <rect key="frame" x="0.0" y="259" width="170" height="50"/>
-                                        <color key="backgroundColor" red="0.14117647059999999" green="0.76078431369999999" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="EN9-5M-NWC"/>
                                             <constraint firstAttribute="width" constant="170" id="okp-HY-T2j"/>
                                         </constraints>
-                                        <state key="normal" title="XX"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
+                                        <state key="normal" title="Attack with 85 PWR" backgroundImage="bambooButton">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -164,9 +166,11 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="playerAButton" destination="gyH-1K-wLB" id="lg1-ch-TOK"/>
                         <outlet property="playerACurrentAttPwr" destination="ke0-1t-zi4" id="o1d-Nw-jCE"/>
                         <outlet property="playerAHealthLabel" destination="f0j-hW-sud" id="62R-vh-ebO"/>
                         <outlet property="playerANameALabel" destination="Kag-8J-8OV" id="JYJ-c1-rnQ"/>
+                        <outlet property="randQuotesBtn" destination="QE1-ph-pVp" id="erg-v7-G8C"/>
                         <outlet property="randomQuoteMessage" destination="izT-mK-MWR" id="BiU-0J-7j9"/>
                     </connections>
                 </viewController>
@@ -176,6 +180,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bambooButton" width="510" height="150"/>
         <image name="fightpath" width="800" height="108"/>
         <image name="mastershifu" width="256" height="256"/>
         <image name="palacebg" width="1920" height="818"/>

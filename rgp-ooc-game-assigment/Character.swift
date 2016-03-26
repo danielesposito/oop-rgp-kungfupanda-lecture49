@@ -12,12 +12,12 @@ import Foundation
 class Character {
     
     
-    private var _hp: Int = 10
+    private var _hp: Int = 0
     private var _attackPwr: Int = 10
     private var _graphic: String = "po"
     private var _name: String = "Po"
-    var randomNumber: UInt32 = 0
-    
+    var randomAttckNumber: UInt32 = 0
+    var randomHealthNumber: UInt32 = 0
     
     var funPhrases: [String] {
         
@@ -31,10 +31,12 @@ class Character {
     }
  
     var hp: Int {
+        
         get {
             return _hp
         }
-    }
+        
+     }
     
     var attackPwr: Int {
         get {
@@ -56,6 +58,22 @@ class Character {
         _graphic = charGraphic
     }
     
+    init(updateHp: Int, updAttPwr: Int) {
+        
+        _hp = updateHp
+        _attackPwr = updAttPwr
+    }
+
+    init(updAttPwr: Int) {
+        
+        _attackPwr = updAttPwr
+    }
+    
+    init(updateHp: Int) {
+        
+        _hp = updateHp
+    }
+    
     func showFunPhrase() -> String? {
         
         if funPhrases.count > 0 {
@@ -71,7 +89,37 @@ class Character {
     
     func makeRandAttPwrNumber() -> UInt32 {
         
-        randomNumber = arc4random_uniform(50) + 1
-        return randomNumber
+        randomAttckNumber = arc4random_uniform(50) + 1
+        return randomAttckNumber
+    }
+    
+    func makeRandHealthPwrNumber() -> UInt32 {
+        
+        randomHealthNumber = arc4random_uniform(350) + 100
+        return randomHealthNumber
+        
+    }
+    
+    func attemptAttack(attackPwr: Int) -> Bool {
+        
+        self._hp -= attackPwr
+        
+        return true
+    }
+    
+    var isAlive: Bool {
+        
+        get {
+            
+            if hp <= 0 {
+                
+                return false
+                
+            } else {
+                
+                return true
+            }
+            
+        }
     }
 }
