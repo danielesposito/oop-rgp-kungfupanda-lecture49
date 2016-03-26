@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var playerACurrentAttPwr: UILabel!
     @IBOutlet weak var playerNameBLabel: UILabel!
     @IBOutlet weak var playerAButton: UIButton!
-    @IBOutlet weak var randQuotesBtn: UIButton!
     //Variables
     var playerPo: Po!
     var quotes: String?
@@ -45,13 +44,13 @@ class ViewController: UIViewController {
   
 }
     //Actions
-    @IBAction func showRndQuoate(sender: AnyObject) {
+    @IBAction func playerPoAttackButton(sender: AnyObject) {
         quotes = playerPo.showFunPhrase()
         
         setRandAttackPwrPlayerA = makeRandNumbersPlayerA()
         playerACurrentAttPwr.text = "AttPwr: \(setRandAttackPwrPlayerA)"
         playerAButton.setTitle("Attack with \(setRandAttackPwrPlayerA) PWR", forState: UIControlState.Normal)
-        randomQuoteMessage.text = "\(quotes!)"
+        randomQuoteMessage.text = "\"\(quotes!)\""
         
         if playerPo.attemptAttack(Int(setRandAttackPwrPlayerA)) {
             playerAHealthLabel.text = "Health: \(playerPo.hp)"
@@ -60,8 +59,8 @@ class ViewController: UIViewController {
         }
         
         if !playerPo.isAlive {
+            randomQuoteMessage.text = "\"ARGHHH ... I FAILED. FORGIVE ME!!\""
             playerAButton.enabled = false
-            randQuotesBtn.enabled = false
             playerAButton.setTitle("YOU DIED!", forState: UIControlState.Normal)
         }
 

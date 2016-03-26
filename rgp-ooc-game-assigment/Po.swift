@@ -13,12 +13,7 @@ class Po: Character {
     override var funPhrases: [String] {
         return ["Who are you?", "You lost your son?", "You must be Kai. Beast of vengeance, Maker of widows", "Augh! chit-chat", "Chitty-chitty-chat-chat, chat-chat-chat!", "Enemies of justice, prepare for...", "Are you kidding me?", "You don't even know kung fu!", "I think I just peed a little!", "Woah! What was that?", "There's no way I'm ever gonna be like you!","I will not let you destroy Oogway's memory!","I always knew I wasn't eating up to my full potential!","Am I the son of a panda?"]
     }
-    
-//    override var attackPwr: Int {
-//        
-//        return 22
-//    }
-    
+
     override var name: String {
         return "Po"
     }
@@ -26,13 +21,5 @@ class Po: Character {
     override var graphic: String {
         return "po"
     }
-    
-
-    var poRandomNumber: UInt32 {
-        
-        return makeRandAttPwrNumber()
-    }
-    
-
-    
+   
 }

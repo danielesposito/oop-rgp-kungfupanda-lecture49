@@ -20,7 +20,6 @@ class Character {
     var randomHealthNumber: UInt32 = 0
     
     var funPhrases: [String] {
-        
         return ["Who are you?", "You lost your son?"]
     }
     
@@ -31,11 +30,9 @@ class Character {
     }
  
     var hp: Int {
-        
         get {
             return _hp
         }
-        
      }
     
     var attackPwr: Int {
@@ -51,7 +48,6 @@ class Character {
     }
     
     init(charName: String, hp: Int, attPwr: Int, charGraphic: String) {
-        
         _name = charName
         _hp = hp
         _attackPwr = attPwr
@@ -59,67 +55,49 @@ class Character {
     }
     
     init(updateHp: Int, updAttPwr: Int) {
-        
         _hp = updateHp
         _attackPwr = updAttPwr
     }
 
     init(updAttPwr: Int) {
-        
         _attackPwr = updAttPwr
     }
     
     init(updateHp: Int) {
-        
         _hp = updateHp
     }
     
     func showFunPhrase() -> String? {
-        
         if funPhrases.count > 0 {
-        
             let funnyPhrase = Int(arc4random_uniform(UInt32(funPhrases.count)))
             return funPhrases[funnyPhrase]
-        
         } else {
-            
-            return "Nothing to Quote"
+            return "Nothing to say. I am bored!"
         }
     }
     
     func makeRandAttPwrNumber() -> UInt32 {
-        
         randomAttckNumber = arc4random_uniform(50) + 1
         return randomAttckNumber
     }
     
     func makeRandHealthPwrNumber() -> UInt32 {
-        
         randomHealthNumber = arc4random_uniform(350) + 100
         return randomHealthNumber
-        
     }
     
     func attemptAttack(attackPwr: Int) -> Bool {
-        
         self._hp -= attackPwr
-        
         return true
     }
     
     var isAlive: Bool {
-        
         get {
-            
             if hp <= 0 {
-                
                 return false
-                
             } else {
-                
                 return true
             }
-            
         }
     }
 }

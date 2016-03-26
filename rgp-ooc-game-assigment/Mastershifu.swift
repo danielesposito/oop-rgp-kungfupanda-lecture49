@@ -19,7 +19,6 @@ class Mastershifu: Character {
     }
     
     override var funPhrases: [String] {
-        
         return ["Illusion?", "A peach cannot defeat Tai Lung!","Believe me, citizens, you have not seen anything yet!","Who is worthy to be trusted with the secret to limitless power?","Have you finished sight-seeing?","My patience is wearing thin!","Where'd he go?", ""]
     }
 }

@@ -43,21 +43,6 @@
                                     <constraint firstAttribute="width" constant="136" id="eUg-Oe-L5R"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QE1-ph-pVp">
-                                <rect key="frame" x="234" y="520" width="133" height="30"/>
-                                <color key="backgroundColor" red="0.043137254899999998" green="0.50588235290000005" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="133" id="5qq-pf-9TX"/>
-                                    <constraint firstAttribute="height" constant="30" id="Htn-4L-M6b"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="QUOTE">
-                                    <color key="titleColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="showRndQuoate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t1u-F9-1lE"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xmq-CO-9rA">
                                 <rect key="frame" x="20" y="281" width="170" height="309"/>
                                 <subviews>
@@ -118,10 +103,13 @@
                                             <constraint firstAttribute="height" constant="50" id="EN9-5M-NWC"/>
                                             <constraint firstAttribute="width" constant="170" id="okp-HY-T2j"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                         <state key="normal" title="Attack with 85 PWR" backgroundImage="bambooButton">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="playerPoAttackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C2M-vi-4Sz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -129,7 +117,7 @@
                                     <constraint firstAttribute="height" constant="309" id="wWM-Pb-sym"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izT-mK-MWR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izT-mK-MWR">
                                 <rect key="frame" x="159" y="396" width="283" height="86"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="86" id="PFr-Ka-UrH"/>
@@ -144,33 +132,23 @@
                         <constraints>
                             <constraint firstItem="DJP-sT-nLQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3Kg-N6-ePc"/>
                             <constraint firstAttribute="trailing" secondItem="DJP-sT-nLQ" secondAttribute="trailing" id="7WA-jD-2Pe"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QE1-ph-pVp" secondAttribute="bottom" constant="50" id="9mU-sH-xUH"/>
                             <constraint firstAttribute="trailing" secondItem="ZNy-dM-km2" secondAttribute="trailing" constant="20" id="AqM-vn-faV"/>
                             <constraint firstItem="eK5-9y-UqE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CIC-jD-sjc"/>
                             <constraint firstItem="xmq-CO-9rA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MYU-JC-M37"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZNy-dM-km2" secondAttribute="bottom" constant="50" id="Nn3-vS-ec6"/>
-                            <constraint firstItem="QE1-ph-pVp" firstAttribute="top" secondItem="izT-mK-MWR" secondAttribute="bottom" constant="111" id="Q6D-K8-Qe9"/>
                             <constraint firstItem="DJP-sT-nLQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Vl1-IE-n0a"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DJP-sT-nLQ" secondAttribute="bottom" id="ZGW-pF-awR"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xmq-CO-9rA" secondAttribute="bottom" constant="10" id="fLT-rX-agZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eK5-9y-UqE" secondAttribute="bottom" id="fo6-4v-gZ5"/>
                             <constraint firstItem="izT-mK-MWR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hEd-7h-H9Y"/>
-                            <constraint firstItem="QE1-ph-pVp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nGK-vd-M1c"/>
-                            <constraint firstItem="QE1-ph-pVp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nwc-rJ-j1J"/>
                             <constraint firstAttribute="trailing" secondItem="eK5-9y-UqE" secondAttribute="trailing" id="vrh-cD-iQ1"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="nGK-vd-M1c"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="playerAButton" destination="gyH-1K-wLB" id="lg1-ch-TOK"/>
                         <outlet property="playerACurrentAttPwr" destination="ke0-1t-zi4" id="o1d-Nw-jCE"/>
                         <outlet property="playerAHealthLabel" destination="f0j-hW-sud" id="62R-vh-ebO"/>
                         <outlet property="playerANameALabel" destination="Kag-8J-8OV" id="JYJ-c1-rnQ"/>
-                        <outlet property="randQuotesBtn" destination="QE1-ph-pVp" id="erg-v7-G8C"/>
                         <outlet property="randomQuoteMessage" destination="izT-mK-MWR" id="BiU-0J-7j9"/>
                     </connections>
                 </viewController>
