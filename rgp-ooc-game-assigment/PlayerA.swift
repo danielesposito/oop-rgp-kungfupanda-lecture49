@@ -1,4 +1,4 @@
-//
+    //
 //  PlayerA.swift
 //  rgp-ooc-game-assigment
 //
@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+    class PlayerA {
+        
+        /// Code below
+    
+}

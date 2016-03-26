@@ -15,6 +15,8 @@
 		5BD8BFB91CA585AA00DF37C5 /* Po.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD8BFB81CA585AA00DF37C5 /* Po.swift */; };
 		5BD8BFBB1CA5894300DF37C5 /* Mastershifu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD8BFBA1CA5894300DF37C5 /* Mastershifu.swift */; };
 		5BD8BFBD1CA59DAF00DF37C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD8BFBC1CA59DAF00DF37C5 /* Assets.xcassets */; };
+		5BD8BFBF1CA5B6CD00DF37C5 /* PlayerA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD8BFBE1CA5B6CD00DF37C5 /* PlayerA.swift */; };
+		5BD8BFC11CA5B6F100DF37C5 /* PlayerB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD8BFC01CA5B6F100DF37C5 /* PlayerB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		5BD8BFB81CA585AA00DF37C5 /* Po.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Po.swift; sourceTree = "<group>"; };
 		5BD8BFBA1CA5894300DF37C5 /* Mastershifu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mastershifu.swift; sourceTree = "<group>"; };
 		5BD8BFBC1CA59DAF00DF37C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5BD8BFBE1CA5B6CD00DF37C5 /* PlayerA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerA.swift; sourceTree = "<group>"; };
+		5BD8BFC01CA5B6F100DF37C5 /* PlayerB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 			children = (
 				5BD8BFA41CA57D2E00DF37C5 /* AppDelegate.swift */,
 				5BD8BFA61CA57D2E00DF37C5 /* ViewController.swift */,
+				5BD8BFBE1CA5B6CD00DF37C5 /* PlayerA.swift */,
+				5BD8BFC01CA5B6F100DF37C5 /* PlayerB.swift */,
 				5BD8BFB61CA5836600DF37C5 /* Character.swift */,
 				5BD8BFA81CA57D2E00DF37C5 /* Main.storyboard */,
 				5BD8BFB81CA585AA00DF37C5 /* Po.swift */,
@@ -144,8 +150,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD8BFBF1CA5B6CD00DF37C5 /* PlayerA.swift in Sources */,
 				5BD8BFBB1CA5894300DF37C5 /* Mastershifu.swift in Sources */,
 				5BD8BFB71CA5836600DF37C5 /* Character.swift in Sources */,
+				5BD8BFC11CA5B6F100DF37C5 /* PlayerB.swift in Sources */,
 				5BD8BFA71CA57D2E00DF37C5 /* ViewController.swift in Sources */,
 				5BD8BFB91CA585AA00DF37C5 /* Po.swift in Sources */,
 				5BD8BFA51CA57D2E00DF37C5 /* AppDelegate.swift in Sources */,

@@ -12,7 +12,10 @@ class ViewController: UIViewController {
 
     //IBOutlets
     @IBOutlet weak var randomQuoteMessage: UILabel!
-    
+    @IBOutlet weak var playerANameALabel: UILabel!
+    @IBOutlet weak var playerAHealthLabel: UILabel!
+    @IBOutlet weak var playerACurrentAttPwr: UILabel!
+    @IBOutlet weak var playerNameBLabel: UILabel!
     
     
     
@@ -24,13 +27,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        playerPo = Po(charName: "Po", charHp: 98, charAttackPwr: 32, charGraphic: "po")
+        playerPo = Po(charName: "Po", hp: 98, attPwr: 32, charGraphic: "po")
         
+        
+        playerANameALabel.text = "Player \(playerPo.name)"
+        playerAHealthLabel.text = "Health: \(playerPo.hp)"
+        playerACurrentAttPwr.text = "AttPwr: \(playerPo.randomNumber)"
+    
         
     }
     //Actions
     @IBAction func showRndQuoate(sender: AnyObject) {
         quotes = playerPo.showFunPhrase()
+        playerACurrentAttPwr.text = "AttPwr: \(playerPo.makeRandAttPwrNumber())"
         randomQuoteMessage.text = "\(quotes!)"
     }
 

@@ -16,6 +16,7 @@ class Character {
     private var _attackPwr: Int = 10
     private var _graphic: String = "po"
     private var _name: String = "Po"
+    var randomNumber: UInt32 = 0
     
     
     var funPhrases: [String] {
@@ -47,11 +48,11 @@ class Character {
         }
     }
     
-    init(charName: String, charHp: Int, charAttackPwr: Int, charGraphic: String) {
+    init(charName: String, hp: Int, attPwr: Int, charGraphic: String) {
         
         _name = charName
-        _hp = charHp
-        _attackPwr = charAttackPwr
+        _hp = hp
+        _attackPwr = attPwr
         _graphic = charGraphic
     }
     
@@ -66,5 +67,11 @@ class Character {
             
             return "Nothing to Quote"
         }
+    }
+    
+    func makeRandAttPwrNumber() -> UInt32 {
+        
+        randomNumber = arc4random_uniform(50) + 1
+        return randomNumber
     }
 }
