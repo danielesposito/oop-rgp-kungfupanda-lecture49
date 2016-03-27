@@ -57,13 +57,13 @@ class ViewController: UIViewController {
                 playerBHealthLabel.text = "Health: \(playerShifu.hp)"
             }
         quotesPo = playerPo.showFunPhrase()
-        randomQuoteMessage.text = "\"\(quotesPo!)\""
+        randomQuoteMessage.text = "\(playerPo.name): \"\(quotesPo!)\""
         setNewPlayerAValues()
 
         if !playerShifu.isAlive {
             
             diePhraseShifu = playerShifu.randDidDiePhrases()
-            randomQuoteMessage.text = "\"\(diePhraseShifu!)\""
+            randomQuoteMessage.text = "\(playerShifu.name): \"\(diePhraseShifu!)\""
             playerBButton.enabled = false
             playerBButton.setTitle("YOU DIED!", forState: UIControlState.Normal)
             
@@ -83,12 +83,12 @@ class ViewController: UIViewController {
         }
         
         quotesShifu = playerShifu.showFunPhrase()
-        randomQuoteMessage.text = "\"\(quotesShifu!)\""
+        randomQuoteMessage.text = "\(playerShifu.name): \"\(quotesShifu!)\""
         setNewPlayerBValues()
         
         if !playerPo.isAlive {
             diePhrasePo = playerPo.randDidDiePhrases()
-            randomQuoteMessage.text = "\"\(diePhrasePo!)\""
+            randomQuoteMessage.text = "\(playerPo.name): \"\(diePhrasePo!)\""
             playerAButton.enabled = false
             playerAButton.setTitle("YOU DIED!", forState: UIControlState.Normal)
             

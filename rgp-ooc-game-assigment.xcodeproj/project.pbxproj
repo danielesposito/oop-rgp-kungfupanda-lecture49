@@ -17,6 +17,7 @@
 		5BD8BFBD1CA59DAF00DF37C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD8BFBC1CA59DAF00DF37C5 /* Assets.xcassets */; };
 		5BD8BFBF1CA5B6CD00DF37C5 /* PlayerA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD8BFBE1CA5B6CD00DF37C5 /* PlayerA.swift */; };
 		5BD8BFC11CA5B6F100DF37C5 /* PlayerB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD8BFC01CA5B6F100DF37C5 /* PlayerB.swift */; };
+		5BD8BFC71CA837FA00DF37C5 /* BradBunR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BD8BFC61CA837FA00DF37C5 /* BradBunR.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5BD8BFBC1CA59DAF00DF37C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BD8BFBE1CA5B6CD00DF37C5 /* PlayerA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerA.swift; sourceTree = "<group>"; };
 		5BD8BFC01CA5B6F100DF37C5 /* PlayerB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerB.swift; sourceTree = "<group>"; };
+		5BD8BFC61CA837FA00DF37C5 /* BradBunR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BradBunR.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				5BD8BFAD1CA57D2E00DF37C5 /* LaunchScreen.storyboard */,
 				5BD8BFBC1CA59DAF00DF37C5 /* Assets.xcassets */,
 				5BD8BFB01CA57D2E00DF37C5 /* Info.plist */,
+				5BD8BFC61CA837FA00DF37C5 /* BradBunR.ttf */,
 			);
 			path = "rgp-ooc-game-assigment";
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD8BFC71CA837FA00DF37C5 /* BradBunR.ttf in Resources */,
 				5BD8BFAF1CA57D2E00DF37C5 /* LaunchScreen.storyboard in Resources */,
 				5BD8BFBD1CA59DAF00DF37C5 /* Assets.xcassets in Resources */,
 				5BD8BFAA1CA57D2E00DF37C5 /* Main.storyboard in Resources */,

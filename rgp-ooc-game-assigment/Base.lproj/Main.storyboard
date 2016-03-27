@@ -115,15 +115,16 @@
                                     <constraint firstAttribute="height" constant="309" id="wWM-Pb-sym"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izT-mK-MWR">
-                                <rect key="frame" x="159" y="396" width="283" height="86"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izT-mK-MWR">
+                                <rect key="frame" x="130" y="432" width="340" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="86" id="PFr-Ka-UrH"/>
-                                    <constraint firstAttribute="width" constant="283" id="abV-1W-AaQ"/>
+                                    <constraint firstAttribute="height" constant="120" id="PFr-Ka-UrH"/>
+                                    <constraint firstAttribute="width" constant="340" id="abV-1W-AaQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gaC-1t-JYe">
                                 <rect key="frame" x="410" y="281" width="170" height="309"/>
@@ -205,7 +206,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejx-zd-lFM">
-                                <rect key="frame" x="260" y="490" width="80" height="30"/>
+                                <rect key="frame" x="260" y="370" width="80" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="2vT-vX-hOD"/>
@@ -229,10 +230,17 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xmq-CO-9rA" secondAttribute="bottom" constant="10" id="fLT-rX-agZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eK5-9y-UqE" secondAttribute="bottom" id="fo6-4v-gZ5"/>
                             <constraint firstItem="izT-mK-MWR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hEd-7h-H9Y"/>
+                            <constraint firstItem="izT-mK-MWR" firstAttribute="top" secondItem="ejx-zd-lFM" secondAttribute="bottom" constant="32" id="kex-gl-m0h"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="izT-mK-MWR" secondAttribute="bottom" constant="48" id="mhA-LY-GQl"/>
                             <constraint firstItem="ejx-zd-lFM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="njL-gk-jTe"/>
                             <constraint firstAttribute="trailing" secondItem="eK5-9y-UqE" secondAttribute="trailing" id="vrh-cD-iQ1"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gaC-1t-JYe" secondAttribute="bottom" constant="10" id="z4Y-UU-gJm"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GPo-p9-kg5"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="playerAButton" destination="gyH-1K-wLB" id="lg1-ch-TOK"/>
