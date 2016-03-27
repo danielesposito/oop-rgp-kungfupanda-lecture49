@@ -36,13 +36,6 @@
                                     <constraint firstAttribute="height" constant="93" id="InN-G9-xfe"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mastershifu" translatesAutoresizingMaskIntoConstraints="NO" id="ZNy-dM-km2">
-                                <rect key="frame" x="444" y="414" width="136" height="136"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="136" id="Pht-kU-mS9"/>
-                                    <constraint firstAttribute="width" constant="136" id="eUg-Oe-L5R"/>
-                                </constraints>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xmq-CO-9rA">
                                 <rect key="frame" x="20" y="281" width="170" height="309"/>
                                 <subviews>
@@ -90,13 +83,18 @@
                                         </constraints>
                                         <blurEffect style="light"/>
                                     </visualEffectView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="po" translatesAutoresizingMaskIntoConstraints="NO" id="SPi-SR-Y2H">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="y3H-uV-3s1">
                                         <rect key="frame" x="0.0" y="74" width="170" height="185"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="170" id="28S-RV-bb2"/>
-                                            <constraint firstAttribute="width" constant="170" id="hSu-8s-Uff"/>
-                                        </constraints>
-                                    </imageView>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="po" translatesAutoresizingMaskIntoConstraints="NO" id="SPi-SR-Y2H">
+                                                <rect key="frame" x="0.0" y="0.0" width="170" height="185"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="170" id="28S-RV-bb2"/>
+                                                    <constraint firstAttribute="width" constant="170" id="hSu-8s-Uff"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyH-1K-wLB">
                                         <rect key="frame" x="0.0" y="259" width="170" height="50"/>
                                         <constraints>
@@ -108,7 +106,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="playerPoAttackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C2M-vi-4Sz"/>
+                                            <action selector="playerPoAttackButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="py5-Tu-c06"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -127,29 +125,126 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gaC-1t-JYe">
+                                <rect key="frame" x="410" y="281" width="170" height="309"/>
+                                <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cwG-CG-Via">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="74"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Iab-PS-btA">
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="74"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="p47-Q1-tcI">
+                                                    <rect key="frame" x="8" y="8" width="150" height="65"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMV-a2-FVW" userLabel="Player Shifu">
+                                                            <rect key="frame" x="0.0" y="0.0" width="57" height="23"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
+                                                            <color key="textColor" red="0.043137254899999998" green="0.50588235290000005" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vk1-1h-0Qg" userLabel="Health Shifu">
+                                                            <rect key="frame" x="0.0" y="21" width="48" height="23"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AttPwr:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSG-lw-1jS" userLabel="AttPwr Shifu">
+                                                            <rect key="frame" x="0.0" y="42" width="50" height="23"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="I6e-1V-EJo"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="wvX-K9-aVe"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="p47-Q1-tcI" firstAttribute="centerX" secondItem="Iab-PS-btA" secondAttribute="centerX" id="5vM-GW-kmw"/>
+                                                <constraint firstItem="p47-Q1-tcI" firstAttribute="leading" secondItem="Iab-PS-btA" secondAttribute="leading" constant="8" id="AU4-wy-hNU"/>
+                                                <constraint firstItem="p47-Q1-tcI" firstAttribute="centerY" secondItem="Iab-PS-btA" secondAttribute="centerY" id="OZW-aO-aCH"/>
+                                                <constraint firstAttribute="trailing" secondItem="p47-Q1-tcI" secondAttribute="trailing" constant="12" id="Wbz-3A-hUa"/>
+                                            </constraints>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="74" id="kpr-3m-fLO"/>
+                                        </constraints>
+                                        <blurEffect style="light"/>
+                                    </visualEffectView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="EPe-1S-Hff">
+                                        <rect key="frame" x="20" y="74" width="130" height="185"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mastershifu" translatesAutoresizingMaskIntoConstraints="NO" id="qrV-7i-SkF">
+                                                <rect key="frame" x="0.0" y="55" width="130" height="130"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="130" id="6Sv-8P-4MA"/>
+                                                    <constraint firstAttribute="width" constant="130" id="IQZ-BZ-XKG"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XfF-WK-GUS">
+                                        <rect key="frame" x="0.0" y="259" width="170" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="85K-eN-eNf"/>
+                                            <constraint firstAttribute="width" constant="170" id="JQo-lf-SgJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                        <state key="normal" title="Attack with 85 PWR" backgroundImage="bambooButton">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playerBAttackButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zeY-WN-pfa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="7Ku-Qf-jV4"/>
+                                    <constraint firstAttribute="height" constant="309" id="X7u-Az-VRZ"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejx-zd-lFM">
+                                <rect key="frame" x="260" y="490" width="80" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="2vT-vX-hOD"/>
+                                </constraints>
+                                <state key="normal" title="RESET"/>
+                                <connections>
+                                    <action selector="resetGameBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eXf-D5-rc1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DJP-sT-nLQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3Kg-N6-ePc"/>
+                            <constraint firstAttribute="trailing" secondItem="gaC-1t-JYe" secondAttribute="trailing" constant="20" id="5i1-gl-gq3"/>
                             <constraint firstAttribute="trailing" secondItem="DJP-sT-nLQ" secondAttribute="trailing" id="7WA-jD-2Pe"/>
-                            <constraint firstAttribute="trailing" secondItem="ZNy-dM-km2" secondAttribute="trailing" constant="20" id="AqM-vn-faV"/>
                             <constraint firstItem="eK5-9y-UqE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CIC-jD-sjc"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ejx-zd-lFM" secondAttribute="bottom" constant="80" id="GPo-p9-kg5"/>
                             <constraint firstItem="xmq-CO-9rA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MYU-JC-M37"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ZNy-dM-km2" secondAttribute="bottom" constant="50" id="Nn3-vS-ec6"/>
                             <constraint firstItem="DJP-sT-nLQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Vl1-IE-n0a"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DJP-sT-nLQ" secondAttribute="bottom" id="ZGW-pF-awR"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xmq-CO-9rA" secondAttribute="bottom" constant="10" id="fLT-rX-agZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eK5-9y-UqE" secondAttribute="bottom" id="fo6-4v-gZ5"/>
                             <constraint firstItem="izT-mK-MWR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hEd-7h-H9Y"/>
+                            <constraint firstItem="ejx-zd-lFM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="njL-gk-jTe"/>
                             <constraint firstAttribute="trailing" secondItem="eK5-9y-UqE" secondAttribute="trailing" id="vrh-cD-iQ1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gaC-1t-JYe" secondAttribute="bottom" constant="10" id="z4Y-UU-gJm"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="playerAButton" destination="gyH-1K-wLB" id="lg1-ch-TOK"/>
                         <outlet property="playerACurrentAttPwr" destination="ke0-1t-zi4" id="o1d-Nw-jCE"/>
                         <outlet property="playerAHealthLabel" destination="f0j-hW-sud" id="62R-vh-ebO"/>
-                        <outlet property="playerANameALabel" destination="Kag-8J-8OV" id="JYJ-c1-rnQ"/>
+                        <outlet property="playerANameLabel" destination="Kag-8J-8OV" id="dFe-xa-QmD"/>
+                        <outlet property="playerBButton" destination="XfF-WK-GUS" id="Wvg-Wt-5fy"/>
+                        <outlet property="playerBCurrentAttPwr" destination="HSG-lw-1jS" id="gV0-gM-4CV"/>
+                        <outlet property="playerBHealthLabel" destination="vk1-1h-0Qg" id="ruI-hc-twU"/>
+                        <outlet property="playerBNameLabel" destination="mMV-a2-FVW" id="QZE-vF-nHo"/>
                         <outlet property="randomQuoteMessage" destination="izT-mK-MWR" id="BiU-0J-7j9"/>
+                        <outlet property="resetGamePlayBtn" destination="ejx-zd-lFM" id="d8b-xb-AAe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

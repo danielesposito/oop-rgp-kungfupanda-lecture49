@@ -23,6 +23,15 @@ class Character {
         return ["Who are you?", "You lost your son?"]
     }
     
+    var diedPhrases: [String] {
+        
+        return ["Noooo ... I dont want to be dead!!"]
+    }
+    
+    var fightHpBonus:[String: Int] {
+            return ["SunStar": 100, "FireBall": 25, "Nada": 0,"Nada": 0,"Nada": 0,"Nada": 0,"LobsterLeg": 55]
+    }
+    
     var name: String {
         get {
             return _name
@@ -73,6 +82,15 @@ class Character {
             return funPhrases[funnyPhrase]
         } else {
             return "Nothing to say. I am bored!"
+        }
+    }
+    
+    func randDidDiePhrases() -> String {
+        if diedPhrases.count > 0 {
+            let diePhrase = Int(arc4random_uniform(UInt32(diedPhrases.count)))
+            return diedPhrases[diePhrase]
+        } else {
+            return "Good bye cruel World"
         }
     }
     
