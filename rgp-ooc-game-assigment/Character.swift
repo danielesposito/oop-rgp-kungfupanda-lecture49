@@ -16,8 +16,8 @@ class Character {
     private var _attackPwr: Int = 10
     private var _graphic: String = "po"
     private var _name: String = "Po"
-    private var _bonusName: String = "N"
-    private var _bonusScore: Int = 0
+//    private var _bonusName: String = "N"
+//    private var _bonusScore: Int = 0
     
     var randomAttckNumber: UInt32 = 0
     var randomHealthNumber: UInt32 = 0
@@ -34,11 +34,11 @@ class Character {
     }
 
     
-    init(wonBonusName: String, wonBonusAmount: Int) {
-        
-        _bonusName = wonBonusName
-        _bonusScore = wonBonusAmount
-    }
+//    init(wonBonusName: String, wonBonusAmount: Int) {
+//        
+//        _bonusName = wonBonusName
+//        _bonusScore = wonBonusAmount
+//    }
     
     struct bonusHpStructure {
         
@@ -47,14 +47,14 @@ class Character {
         
     }
     
-    let fightBonus1 = bonusHpStructure(bonusName: "Sun Star", bonusScore: 100)
-    let fightBonus2 = bonusHpStructure(bonusName: "Fire Ball", bonusScore: 25)
+    let fightBonus1 = bonusHpStructure(bonusName: "Sun Star", bonusScore: 10)
+    let fightBonus2 = bonusHpStructure(bonusName: "Fire Ball", bonusScore: 15)
     let fightBonus3 = bonusHpStructure(bonusName: "Nada", bonusScore: 0)
-    let fightBonus4 = bonusHpStructure(bonusName: "Lobster Lega", bonusScore: 55)
-    let fightBonus5 = bonusHpStructure(bonusName: "Bamboo Ball", bonusScore: 100)
-    let fightBonus6 = bonusHpStructure(bonusName: "Golden Goose Egg", bonusScore: 150)
-    let fightBonus7 = bonusHpStructure(bonusName: "Onyx Cylinder", bonusScore: 85)
-    let fightBonus8 = bonusHpStructure(bonusName: "SunStar", bonusScore: 100)
+    let fightBonus4 = bonusHpStructure(bonusName: "Lobster Lega", bonusScore: 20)
+    let fightBonus5 = bonusHpStructure(bonusName: "Bamboo Ball", bonusScore: 25)
+    let fightBonus6 = bonusHpStructure(bonusName: "Golden Goose Egg", bonusScore: 30)
+    let fightBonus7 = bonusHpStructure(bonusName: "Onyx Cylinder", bonusScore: 35)
+    let fightBonus8 = bonusHpStructure(bonusName: "SunStar", bonusScore: 50)
     
     
     var bonusHpItems : [(String,Int)] {
@@ -121,9 +121,9 @@ class Character {
         _attackPwr = updAttPwr
     }
     
-//    init(updateHp: Int) {
-//        _hp = updateHp
-//    }
+    init(updateHp: Int) {
+        _hp = updateHp
+    }
     
     func showFunPhrase() -> String? {
         if funPhrases.count > 0 {
@@ -153,9 +153,9 @@ class Character {
         return randomHealthNumber
     }
 
-    func collectBonushealth(bonusHp: Int) -> Bool {
-        self._hp += bonusHp
-        return true
+    func collectBonushealth(bonusHp: Int){
+        self._hp = bonusHp
+//        return true
     }
     
     func attemptAttack(attackPwr: Int) -> Bool {
