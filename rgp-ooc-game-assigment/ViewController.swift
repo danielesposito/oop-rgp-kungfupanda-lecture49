@@ -11,39 +11,42 @@ import UIKit
 class ViewController: UIViewController {
 
     //IBOutlets
+    //Player 1
     @IBOutlet weak var randomQuoteMessage: UILabel!
-    @IBOutlet weak var playerANameLabel: UILabel!
-    @IBOutlet weak var playerAHealthLabel: UILabel!
-    @IBOutlet weak var playerACurrentAttPwr: UILabel!
-    @IBOutlet weak var playerAButton: UIButton!
+    @IBOutlet weak var player1NameLabel: UILabel!
+    @IBOutlet weak var player1HealthLabel: UILabel!
+    @IBOutlet weak var player1CurrentAttPwr: UILabel!
+    @IBOutlet weak var player1Button: UIButton!
+    //Player 2
+    @IBOutlet weak var player2NameLabel: UILabel!
+    @IBOutlet weak var player2HealthLabel: UILabel!
+    @IBOutlet weak var player2CurrentAttPwr: UILabel!
+    @IBOutlet weak var player2Button: UIButton!
     @IBOutlet weak var resetGamePlayBtn: UIButton!
     
-    @IBOutlet weak var playerBNameLabel: UILabel!
-    @IBOutlet weak var playerBHealthLabel: UILabel!
-    @IBOutlet weak var playerBCurrentAttPwr: UILabel!
-    @IBOutlet weak var playerBButton: UIButton!
-    
     //Variables
-    //Player A
+    //Player 1
     var playerPo: Po!
     var quotesPo: String?
     var diePhrasePo: String?
-    var randomHealthStartPlayerA: UInt32 = 0
-    var randomAttackPwrPlayerA: UInt32 = 0
-    var setRandAttackPwrPlayerA: UInt32 = 0
-    //Player B
+    var randomHealthStartPlayer1: UInt32 = 0
+    var randomAttackPwrPlayer1: UInt32 = 0
+    var setRandAttackPwrPlayer1: UInt32 = 0
+    //Player 2
     var playerShifu: Mastershifu!
     var quotesShifu: String?
     var diePhraseShifu: String?
-    var randomHealthStartPlayerB: UInt32 = 0
-    var randomAttackPwrPlayerB: UInt32 = 0
-    var setRandAttackPwrPlayerB: UInt32 = 0
+    var randomHealthStartPlayer2: UInt32 = 0
+    var randomAttackPwrPlayer2: UInt32 = 0
+    var setRandAttackPwrPlayer2: UInt32 = 0
     var rndFighterNumber: Int = 0
     var currentFighter: Int = 0
-    var playerABonusHp: Int = 0
     
-    var foundBonusPlayerA: (String, Int) = ("",0)
-    var foundBonusPlayerB: (String, Int) = ("",0)
+    var foundBonusPlayer1: (String, Int) = ("",0)
+    var foundBonusPlayer2: (String, Int) = ("",0)
+    
+    var newPlayer1Hp: Int = 0
+    var newPlayer2Hp: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,72 +58,78 @@ class ViewController: UIViewController {
     //Actions
     @IBAction func playerPoAttackButtonPressed(sender: AnyObject) {
         
-        playerShifu.attemptAttack(Int(randomAttackPwrPlayerA))
         
-            if playerShifu.hp <= 0 {
-                playerBHealthLabel.text = "Health: 0"
+        
+        playerShifu.attemptAttackPlayer2(Int(randomAttackPwrPlayer1))
+        didFindBonusPlayerA()
+        
+            if playerShifu.hpPlayer2 <= 0 {
+                player2HealthLabel.text = "Health: 0"
             } else {
-                playerBHealthLabel.text = "Health: \(playerShifu.hp)"
+                player2HealthLabel.text = "Health: \(playerShifu.hpPlayer2)"
             }
         quotesPo = playerPo.showFunPhrase()
         randomQuoteMessage.text = "\(playerPo.name): \"\(quotesPo!)\""
         
         
-        setNewPlayerAValues()
+        setNewPlayer1Values()
         
-        if !playerShifu.isAlive {
+        if !playerShifu.isAlivePlayer2 {
             
             diePhraseShifu = playerShifu.randDidDiePhrases()
             randomQuoteMessage.text = "\(playerShifu.name): \"\(diePhraseShifu!)\""
-            playerBButton.enabled = false
-            playerBButton.setTitle("YOU DIED!", forState: UIControlState.Normal)
+            player2Button.enabled = false
+            player2Button.setTitle("YOU DIED!", forState: UIControlState.Normal)
             
             // Set button state for Winner Player A
-            playerAButton.enabled = false
-            playerAButton.setTitle("YOU WON!!!!", forState: UIControlState.Normal)
+            player1Button.enabled = false
+            player1Button.setTitle("YOU WON!!!!", forState: UIControlState.Normal)
             resetGamePlayBtn.hidden = false
         } else {
             
             switchFighters()
         }
-        
 }
     
     @IBAction func playerBAttackButtonPressed(sender: AnyObject) {
-        playerPo.attemptAttack(Int(randomAttackPwrPlayerB))
-        if playerPo.hp <= 0 {
-            playerAHealthLabel.text = "Health: 0"
+        
+        
+        
+        playerPo.attemptAttackPlayer1(Int(randomAttackPwrPlayer2))
+        didFindBonusPlayerB()
+        
+        if playerPo.hpPlayer1 <= 0 {
+            player1HealthLabel.text = "Health: 0"
         } else {
-            playerAHealthLabel.text = "Health: \(playerPo.hp)"
+            player1HealthLabel.text = "Health: \(playerPo.hpPlayer1)"
         }
         
         quotesShifu = playerShifu.showFunPhrase()
         randomQuoteMessage.text = "\(playerShifu.name): \"\(quotesShifu!)\""
         
         
-        setNewPlayerBValues()
+        setNewPlayer2Values()
         
-        if !playerPo.isAlive {
+        if !playerPo.isAlivePlayer1 {
             diePhrasePo = playerPo.randDidDiePhrases()
             randomQuoteMessage.text = "\(playerPo.name): \"\(diePhrasePo!)\""
-            playerAButton.enabled = false
-            playerAButton.setTitle("YOU DIED!", forState: UIControlState.Normal)
+            player1Button.enabled = false
+            player1Button.setTitle("YOU DIED!", forState: UIControlState.Normal)
             
             //Set button state for Winner Player B
-            playerBButton.enabled = false
-            playerBButton.setTitle("YOU WON!!", forState: UIControlState.Normal)
+            player2Button.enabled = false
+            player2Button.setTitle("YOU WON!!", forState: UIControlState.Normal)
             resetGamePlayBtn.hidden = false
         } else {
             
             switchFighters()
         }
-       
     }
     
     @IBAction func resetGameBtnPressed(sender: AnyObject) {
         prepareGamePlay()
-        setNewPlayerAValues()
-        setNewPlayerBValues()
+        setNewPlayer1Values()
+        setNewPlayer2Values()
     }
     
     func prepareGamePlay() {
@@ -129,59 +138,57 @@ class ViewController: UIViewController {
         resetGamePlayBtn.hidden = true
 
         //Initialize Player A
-        playerPo = Po(charName: "Po", hp: 0, attPwr: 0, charGraphic: "po")
+        playerPo = Po(charName: "Po", hpPlayer1: 0, attPwrPlayer1: 0, charGraphic: "po")
         playerPo.makeRandAttPwrNumber()
         playerPo.makeRandHealthPwrNumber()
         //Initialize Player B
-        playerShifu = Mastershifu(charName: "MasterShifu", hp: 0, attPwr: 0, charGraphic: "mastershifu")
+        playerShifu = Mastershifu(charName: "Shifu", hpPlayer2: 0, attPwrPlayer2: 0, charGraphic: "mastershifu")
         
         playerShifu.makeRandAttPwrNumber()
         playerShifu.makeRandHealthPwrNumber()
         //Player A - Set up random numbers
-        randomHealthStartPlayerA = playerPo.randomHealthNumber
-        randomAttackPwrPlayerA = playerPo.randomAttckNumber
+        randomHealthStartPlayer1 = playerPo.randomHealthNumber
+        randomAttackPwrPlayer1 = playerPo.randomAttckNumber
         // Player B - Set up random numbers
-        randomHealthStartPlayerB = playerShifu.randomHealthNumber
-        randomAttackPwrPlayerB = playerShifu.randomAttckNumber
+        randomHealthStartPlayer2 = playerShifu.randomHealthNumber
+        randomAttackPwrPlayer2 = playerShifu.randomAttckNumber
         
         //Player A - Update Score Menu & initializers
-        playerAHealthLabel.text = "Health: \(Int(randomHealthStartPlayerA))"
-//        playerACurrentAttPwr.text = "Attack Pwr: \(Int(randomAttackPwrPlayerA))"
+        player1HealthLabel.text = "Health: \(Int(randomHealthStartPlayer1))"
+        player1Button.setTitle("Attack with \(randomAttackPwrPlayer1) PWR", forState: UIControlState.Normal)
+        player1NameLabel.text = "Player \(playerPo.name)"
+        playerPo = Po(updateHpPlayer1: Int(randomHealthStartPlayer1), updAttPwrPlayer1: Int(randomAttackPwrPlayer1))
         
-        playerAButton.setTitle("Attack with \(randomAttackPwrPlayerA) PWR", forState: UIControlState.Normal)
-        playerANameLabel.text = "Player \(playerPo.name)"
-        playerPo = Po(updateHp: Int(randomHealthStartPlayerA), updAttPwr: Int(randomAttackPwrPlayerA))
+        
         //Player B - Update Score Menu & initializers
-        playerBHealthLabel.text = "Health: \(Int(randomHealthStartPlayerB))"
-//        playerBCurrentAttPwr.text = "Attack Pwr: \(Int(randomAttackPwrPlayerB))"
-        
-        playerBButton.setTitle("Attack with \(randomAttackPwrPlayerB) PWR", forState: UIControlState.Normal)
-        playerBNameLabel.text = "Player \(playerShifu.name)"
-        playerShifu = Mastershifu(updateHp: Int(randomHealthStartPlayerB), updAttPwr: Int(randomAttackPwrPlayerB))
+        player2HealthLabel.text = "Health: \(Int(randomHealthStartPlayer2))"
+        player2Button.setTitle("Attack with \(randomAttackPwrPlayer2) PWR", forState: UIControlState.Normal)
+        player2NameLabel.text = "Player \(playerShifu.name)"
+        playerShifu = Mastershifu(updateHpPlayer2: Int(randomHealthStartPlayer2), updAttPwrPlayer2: Int(randomAttackPwrPlayer2))
         
         setUpRndPlayerToStart()
     }
     
-    func makeRandNumbersPlayerA() -> UInt32 {
-        randomAttackPwrPlayerA = playerPo.makeRandAttPwrNumber()
-        return randomAttackPwrPlayerA
+    func makeRandNumbersPlayer1() -> UInt32 {
+        randomAttackPwrPlayer1 = playerPo.makeRandAttPwrNumber()
+        return randomAttackPwrPlayer1
     }
     
-    func makeRandNumbersPlayerB() -> UInt32 {
-        randomAttackPwrPlayerB = playerShifu.makeRandAttPwrNumber()
-        return randomAttackPwrPlayerB
+    func makeRandNumbersPlayer2() -> UInt32 {
+        randomAttackPwrPlayer2 = playerShifu.makeRandAttPwrNumber()
+        return randomAttackPwrPlayer2
     }
     
-    func setNewPlayerAValues() {
-        setRandAttackPwrPlayerA = makeRandNumbersPlayerA()
-//        playerACurrentAttPwr.text = "AttPwr: \(setRandAttackPwrPlayerA)"
-        playerAButton.setTitle("Attack with \(setRandAttackPwrPlayerA) PWR", forState: UIControlState.Normal)
+    func setNewPlayer1Values() {
+        setRandAttackPwrPlayer1 = makeRandNumbersPlayer1()
+//        player1CurrentAttPwr.text = "AttPwr: \(setRandAttackPwrPlayer1)"
+        player1Button.setTitle("Attack with \(setRandAttackPwrPlayer1) PWR", forState: UIControlState.Normal)
     }
     
-    func setNewPlayerBValues() {
-        setRandAttackPwrPlayerB = makeRandNumbersPlayerB()
-//        playerBCurrentAttPwr.text = "AttPwr: \(setRandAttackPwrPlayerB)"
-        playerBButton.setTitle("Attack with \(setRandAttackPwrPlayerB)", forState: UIControlState.Normal)
+    func setNewPlayer2Values() {
+        setRandAttackPwrPlayer2 = makeRandNumbersPlayer2()
+//        player2CurrentAttPwr.text = "AttPwr: \(setRandAttackPwrPlayer2)"
+        player2Button.setTitle("Attack with \(setRandAttackPwrPlayer2)", forState: UIControlState.Normal)
     }
     
     func genRndFighterNumber() -> Int {
@@ -192,13 +199,13 @@ class ViewController: UIViewController {
     func setUpRndPlayerToStart() {
         if genRndFighterNumber() == 0 {
             //Player A starts / Disable Buttons for Player B
-            playerAButton.enabled = true
-            playerBButton.enabled = false
+            player1Button.enabled = true
+            player2Button.enabled = false
             currentFighter = 0
         } else {
             //Player A starts / Disable Buttons for Player B
-            playerAButton.enabled = false
-            playerBButton.enabled = true
+            player1Button.enabled = false
+            player2Button.enabled = true
             currentFighter = 1
         }
     }
@@ -207,44 +214,34 @@ class ViewController: UIViewController {
         
         if currentFighter == 0 {
             currentFighter = 1
-            playerAButton.enabled = false
-            playerBButton.enabled = true
-            didFindBonusPlayerA()
+            player1Button.enabled = false
+            player2Button.enabled = true
             
             
         } else {
             currentFighter = 0
-            playerAButton.enabled = true
-            playerBButton.enabled = false
-            didFindBonusPlayerB()
+            player1Button.enabled = true
+            player2Button.enabled = false
         }
     }
     
     func didFindBonusPlayerA(){
-        foundBonusPlayerA = playerPo.foundBonusHealth()
-        if foundBonusPlayerA.0 == "Nada" {
-//            print("Added Bonus: \(foundBonusPlayerA.0) - \(foundBonusPlayerA.1) HP")
-        } else {
-            print("Added Bonus: \(foundBonusPlayerA.0) - \(foundBonusPlayerA.1) HP")
-            playerAHealthLabel.text = "Health: \(Int(playerPo.hp + foundBonusPlayerA.1))"
-            let newPlayerAHp = playerPo.hp + foundBonusPlayerA.1
-            playerPo = Po(updateHp: newPlayerAHp)
-            print(newPlayerAHp)
-        }
+        foundBonusPlayer1 = playerPo.foundBonusHealth()
+
+            newPlayer1Hp =  foundBonusPlayer1.1
+            playerPo.collectBonushealthPlayer1(newPlayer1Hp)
+            player1HealthLabel.text = "Health: \(Int(playerPo.hpPlayer1))"
+            print("View: Current HP Player 1: \(playerPo.hpPlayer1)")
+            print("Added Bonus: \(foundBonusPlayer1.0) - \(foundBonusPlayer1.1) HP")
     }
     
     func didFindBonusPlayerB() {
-        foundBonusPlayerB = playerShifu.foundBonusHealth()
-        if foundBonusPlayerB.0 == "Nada" {
-//            print("Added Bonus: \(foundBonusPlayerB.0) - \(foundBonusPlayerB.1) HP")
-        } else {
-            print("Added Bonus: \(foundBonusPlayerB.0) - \(foundBonusPlayerB.1) HP")
-            playerAHealthLabel.text = "Health: \(Int(playerShifu.hp + foundBonusPlayerB.1))"
-            let newPlayerBHp = playerShifu.hp + foundBonusPlayerB.1
-            playerShifu = Mastershifu(updateHp: newPlayerBHp)
-            print(newPlayerBHp)
-        }
-   
+        foundBonusPlayer2 = playerShifu.foundBonusHealth()
+            newPlayer2Hp =  foundBonusPlayer2.1
+            playerShifu.collectBonushealthPlayer2(newPlayer2Hp)
+            player2HealthLabel.text = "Health: \(Int(playerShifu.hpPlayer2))"
+            print("View: Current HP Player 2: \(playerShifu.hpPlayer2)")
+            print("Added Bonus: \(foundBonusPlayer2.0) - \(foundBonusPlayer2.1) HP")
     }
 
 

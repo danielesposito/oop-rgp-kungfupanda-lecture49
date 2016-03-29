@@ -10,6 +10,7 @@ import Foundation
 
 class Mastershifu: Character {
     
+
     override var name: String {
         return "Shifu"
     }
@@ -24,6 +25,6 @@ class Mastershifu: Character {
     
     override var diedPhrases: [String] {
         return ["Heaven will certainly be good to me", "I can see little tiny shifu angels"]
-        
     }
+    
 }

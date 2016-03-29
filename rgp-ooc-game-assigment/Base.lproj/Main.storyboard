@@ -217,6 +217,14 @@
                                     <action selector="resetGameBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eXf-D5-rc1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ns-U2-gMU">
+                                <rect key="frame" x="266" y="321" width="69" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="TestReset"/>
+                                <connections>
+                                    <action selector="resetGameBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UGl-3t-ger"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -227,9 +235,11 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ejx-zd-lFM" secondAttribute="bottom" constant="80" id="GPo-p9-kg5"/>
                             <constraint firstItem="xmq-CO-9rA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MYU-JC-M37"/>
                             <constraint firstItem="DJP-sT-nLQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Vl1-IE-n0a"/>
+                            <constraint firstItem="3ns-U2-gMU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WKJ-Vf-nVK"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DJP-sT-nLQ" secondAttribute="bottom" id="ZGW-pF-awR"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xmq-CO-9rA" secondAttribute="bottom" constant="10" id="fLT-rX-agZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eK5-9y-UqE" secondAttribute="bottom" id="fo6-4v-gZ5"/>
+                            <constraint firstItem="ejx-zd-lFM" firstAttribute="top" secondItem="3ns-U2-gMU" secondAttribute="bottom" constant="19" id="gzF-jh-vEi"/>
                             <constraint firstItem="izT-mK-MWR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hEd-7h-H9Y"/>
                             <constraint firstItem="izT-mK-MWR" firstAttribute="top" secondItem="ejx-zd-lFM" secondAttribute="bottom" constant="32" id="kex-gl-m0h"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="izT-mK-MWR" secondAttribute="bottom" constant="48" id="mhA-LY-GQl"/>
@@ -244,14 +254,14 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="playerAButton" destination="gyH-1K-wLB" id="lg1-ch-TOK"/>
-                        <outlet property="playerACurrentAttPwr" destination="ke0-1t-zi4" id="o1d-Nw-jCE"/>
-                        <outlet property="playerAHealthLabel" destination="f0j-hW-sud" id="62R-vh-ebO"/>
-                        <outlet property="playerANameLabel" destination="Kag-8J-8OV" id="dFe-xa-QmD"/>
-                        <outlet property="playerBButton" destination="XfF-WK-GUS" id="Wvg-Wt-5fy"/>
-                        <outlet property="playerBCurrentAttPwr" destination="HSG-lw-1jS" id="gV0-gM-4CV"/>
-                        <outlet property="playerBHealthLabel" destination="vk1-1h-0Qg" id="ruI-hc-twU"/>
-                        <outlet property="playerBNameLabel" destination="mMV-a2-FVW" id="QZE-vF-nHo"/>
+                        <outlet property="player1Button" destination="gyH-1K-wLB" id="rgh-G9-uCz"/>
+                        <outlet property="player1CurrentAttPwr" destination="ke0-1t-zi4" id="tzw-fS-w6Z"/>
+                        <outlet property="player1HealthLabel" destination="f0j-hW-sud" id="wS7-Cm-Mwc"/>
+                        <outlet property="player1NameLabel" destination="Kag-8J-8OV" id="OnE-FO-Q65"/>
+                        <outlet property="player2Button" destination="XfF-WK-GUS" id="2cu-8Y-Tns"/>
+                        <outlet property="player2CurrentAttPwr" destination="HSG-lw-1jS" id="erc-vu-l8i"/>
+                        <outlet property="player2HealthLabel" destination="vk1-1h-0Qg" id="abg-7y-Rja"/>
+                        <outlet property="player2NameLabel" destination="mMV-a2-FVW" id="KP8-rK-RTB"/>
                         <outlet property="randomQuoteMessage" destination="izT-mK-MWR" id="BiU-0J-7j9"/>
                         <outlet property="resetGamePlayBtn" destination="ejx-zd-lFM" id="d8b-xb-AAe"/>
                     </connections>
