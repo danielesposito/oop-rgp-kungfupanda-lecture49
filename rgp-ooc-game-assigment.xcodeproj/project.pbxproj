@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B358ED51CAAB7A3005922E3 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B358ED41CAAB7A3005922E3 /* UIViewExtensions.swift */; };
 		5BD8BFA51CA57D2E00DF37C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD8BFA41CA57D2E00DF37C5 /* AppDelegate.swift */; };
 		5BD8BFA71CA57D2E00DF37C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD8BFA61CA57D2E00DF37C5 /* ViewController.swift */; };
 		5BD8BFAA1CA57D2E00DF37C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD8BFA81CA57D2E00DF37C5 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B358ED41CAAB7A3005922E3 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		5BD8BFA11CA57D2E00DF37C5 /* rgp-ooc-game-assigment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rgp-ooc-game-assigment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD8BFA41CA57D2E00DF37C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BD8BFA61CA57D2E00DF37C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				5BD8BFA81CA57D2E00DF37C5 /* Main.storyboard */,
 				5BD8BFB81CA585AA00DF37C5 /* Po.swift */,
 				5BD8BFBA1CA5894300DF37C5 /* Mastershifu.swift */,
+				5B358ED41CAAB7A3005922E3 /* UIViewExtensions.swift */,
 				5BD8BFAD1CA57D2E00DF37C5 /* LaunchScreen.storyboard */,
 				5BD8BFBC1CA59DAF00DF37C5 /* Assets.xcassets */,
 				5BD8BFB01CA57D2E00DF37C5 /* Info.plist */,
@@ -156,6 +159,7 @@
 			files = (
 				5BD8BFBF1CA5B6CD00DF37C5 /* PlayerA.swift in Sources */,
 				5BD8BFBB1CA5894300DF37C5 /* Mastershifu.swift in Sources */,
+				5B358ED51CAAB7A3005922E3 /* UIViewExtensions.swift in Sources */,
 				5BD8BFB71CA5836600DF37C5 /* Character.swift in Sources */,
 				5BD8BFC11CA5B6F100DF37C5 /* PlayerB.swift in Sources */,
 				5BD8BFA71CA57D2E00DF37C5 /* ViewController.swift in Sources */,
@@ -312,6 +316,7 @@
 				5BD8BFB51CA57D2E00DF37C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

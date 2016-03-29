@@ -52,10 +52,13 @@ class ViewController: UIViewController {
         
         prepareGamePlay()
         setUpRndPlayerToStart()
-        
+        player1BonusFoundLabel.text = ""
+        player2BonusFoundLabel.text = ""
     }
     //Actions
     @IBAction func player1AttackButtonPressed(sender: AnyObject) {
+        
+        didFindBonusPlayer1()
         
         playerShifu.attemptAttack(Int(randomAttackPwrPlayer1))
         
@@ -89,6 +92,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func player2AttackButtonPressed(sender: AnyObject) {
+        didFindBonusPlayer2()
         playerPo.attemptAttack(Int(randomAttackPwrPlayer2))
         if playerPo.hp <= 0 {
             player1HealthLabel.text = "Health: 0"
@@ -211,18 +215,16 @@ class ViewController: UIViewController {
             currentFighter = 1
             player1Button.enabled = false
             player2Button.enabled = true
-            didFindBonusPlayerA()
             
             
         } else {
             currentFighter = 0
             player1Button.enabled = true
             player2Button.enabled = false
-            didFindBonusPlayerB()
         }
     }
     
-    func didFindBonusPlayerA(){
+    func didFindBonusPlayer1(){
         foundBonusPlayer1 = playerPo.foundBonusHealth()
         
             player1HealthLabel.text = "Health: \(Int(playerPo.hp + foundBonusPlayer1.1))"
@@ -231,11 +233,20 @@ class ViewController: UIViewController {
             print("View: Added Bonus Player 1: \(foundBonusPlayer1.0) - \(foundBonusPlayer1.1) HP")
             print("View: Current HP Player  1: \(playerPo.hp)")
             if foundBonusPlayer1.0 != "Nada" {
-                player1BonusFoundLabel.text = "BONUS: \(foundBonusPlayer1.0) - \(foundBonusPlayer1.1) HP"
+                self.player1BonusFoundLabel.fadeOut(completion:{
+                    (finished: Bool) -> Void in
+                    self.player1BonusFoundLabel.text = "+ \(self.foundBonusPlayer1.0) - \(self.foundBonusPlayer1.1) HP"
+                    self.player1BonusFoundLabel.fadeIn()
+                    
+                    self.player1BonusFoundLabel.fadeOut(completion:{
+                        (finished: Bool) -> Void in
+                        self.player1BonusFoundLabel.text = ""
+                    })
+                })
             }
     }
     
-    func didFindBonusPlayerB() {
+    func didFindBonusPlayer2() {
         foundBonusPlayer2 = playerShifu.foundBonusHealth()
         
             player2HealthLabel.text = "Health: \(Int(playerShifu.hp + foundBonusPlayer2.1))"
@@ -244,7 +255,17 @@ class ViewController: UIViewController {
             print("View: Added Bonus Player 2: \(foundBonusPlayer2.0) - \(foundBonusPlayer2.1) HP")
             print("View: Current HP Player  2: \(playerShifu.hp)")
             if foundBonusPlayer2.0 != "Nada" {
-                player2BonusFoundLabel.text = "BONUS: \(foundBonusPlayer2.0) - \(foundBonusPlayer2.1) HP"
+                self.player2BonusFoundLabel.fadeOut(completion:{
+                    (finished: Bool) -> Void in
+                    self.player2BonusFoundLabel.text = "+ \(self.foundBonusPlayer2.0) - \(self.foundBonusPlayer2.1) HP"
+                    self.player2BonusFoundLabel.fadeIn()
+                    
+                    self.player2BonusFoundLabel.fadeOut(completion:{
+                        (finished: Bool) -> Void in
+                        self.player2BonusFoundLabel.text = ""
+                    })
+                    
+                })
             }
         
         
