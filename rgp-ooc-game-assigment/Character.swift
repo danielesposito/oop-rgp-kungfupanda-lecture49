@@ -43,7 +43,7 @@ class Character {
     struct bonusHpStructure {
         
         var bonusName: String = "l"
-        var  bonusScore: Int = 0
+        var bonusScore: Int = 0
         
     }
     
@@ -70,7 +70,6 @@ class Character {
                 (fightBonus7.bonusName, fightBonus7.bonusScore),
                 (fightBonus8.bonusName, fightBonus8.bonusScore)]
         }
-        
     }
     
     func foundBonusHealth() -> (bonusName: String, bonusScore: Int)
@@ -84,7 +83,6 @@ class Character {
                 return bonusHpItems[randomIndex]
         }
     }
-    
     
     var name: String {
         get {

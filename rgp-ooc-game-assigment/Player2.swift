@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PlayerB  {
+class Player2  {
     
     /// Code below
 }
