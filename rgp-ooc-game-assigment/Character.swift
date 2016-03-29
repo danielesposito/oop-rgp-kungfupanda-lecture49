@@ -49,10 +49,10 @@ class Character {
     
     let fightBonus1 = bonusHpStructure(bonusName: "Sun Star", bonusScore: 2)
     let fightBonus2 = bonusHpStructure(bonusName: "Fire Ball", bonusScore: 5)
-    let fightBonus3 = bonusHpStructure(bonusName: "Nada", bonusScore: 0)
-    let fightBonus4 = bonusHpStructure(bonusName: "Lobster Lega", bonusScore: 7)
+    let fightBonus3 = bonusHpStructure(bonusName: "NoBonus", bonusScore: 0)
+    let fightBonus4 = bonusHpStructure(bonusName: "Lobster Legs", bonusScore: 7)
     let fightBonus5 = bonusHpStructure(bonusName: "Bamboo Ball", bonusScore: 9)
-    let fightBonus6 = bonusHpStructure(bonusName: "Golden Goose Egg", bonusScore: 11)
+    let fightBonus6 = bonusHpStructure(bonusName: "Golden Egg", bonusScore: 11)
     let fightBonus7 = bonusHpStructure(bonusName: "Onyx Cylinder", bonusScore: 13)
     let fightBonus8 = bonusHpStructure(bonusName: "SunStar", bonusScore: 20)
     

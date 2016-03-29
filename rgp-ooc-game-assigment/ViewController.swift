@@ -70,6 +70,13 @@ class ViewController: UIViewController {
         quotesPo = playerPo.showFunPhrase()
         randomQuoteMessage.text = "\(playerPo.name): \"\(quotesPo!)\""
         
+
+        self.randomQuoteMessage.fadeOut(completion:{
+            (finished: Bool) -> Void in
+            self.randomQuoteMessage.text = ""
+            self.randomQuoteMessage.alpha = 1.0
+        })
+        
         
         setNewPlayerAValues()
         
@@ -78,17 +85,20 @@ class ViewController: UIViewController {
             diePhraseShifu = playerShifu.randDidDiePhrases()
             randomQuoteMessage.text = "\(playerShifu.name): \"\(diePhraseShifu!)\""
             player2Button.enabled = false
-            player2Button.setTitle("YOU DIED!", forState: UIControlState.Normal)
+            player2Button.titleLabel!.font = UIFont(name: "HelveticaNeue-Bold", size: 26)
+            player2Button.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+            player2Button.setTitle("LOOSER", forState: UIControlState.Normal)
             
             // Set button state for Winner Player A
             player1Button.enabled = false
-            player1Button.setTitle("YOU WON!!!!", forState: UIControlState.Normal)
+            player1Button.titleLabel!.font = UIFont(name: "HelveticaNeue-Bold", size: 26)
+            player1Button.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+            player1Button.setTitle("WINNER", forState: UIControlState.Normal)
             resetGamePlayBtn.hidden = false
         } else {
             
             switchFighters()
         }
-        
     }
     
     @IBAction func player2AttackButtonPressed(sender: AnyObject) {
@@ -102,7 +112,12 @@ class ViewController: UIViewController {
         
         quotesShifu = playerShifu.showFunPhrase()
         randomQuoteMessage.text = "\(playerShifu.name): \"\(quotesShifu!)\""
-        
+
+        self.randomQuoteMessage.fadeOut(completion:{
+            (finished: Bool) -> Void in
+            self.randomQuoteMessage.text = ""
+            self.randomQuoteMessage.alpha = 1.0
+        })
         
         setNewPlayerBValues()
         
@@ -110,17 +125,20 @@ class ViewController: UIViewController {
             diePhrasePo = playerPo.randDidDiePhrases()
             randomQuoteMessage.text = "\(playerPo.name): \"\(diePhrasePo!)\""
             player1Button.enabled = false
-            player1Button.setTitle("YOU DIED!", forState: UIControlState.Normal)
+            player1Button.titleLabel!.font = UIFont(name: "HelveticaNeue-Bold", size: 26)
+            player1Button.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
+            player1Button.setTitle("LOOSER!", forState: UIControlState.Normal)
             
             //Set button state for Winner Player B
             player2Button.enabled = false
-            player2Button.setTitle("YOU WON!!", forState: UIControlState.Normal)
+            player2Button.titleLabel!.font = UIFont(name: "HelveticaNeue-Bold", size: 26)
+            player2Button.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+            player2Button.setTitle("WINNER!!", forState: UIControlState.Normal)
             resetGamePlayBtn.hidden = false
         } else {
             
             switchFighters()
         }
-        
     }
     
     @IBAction func resetGameBtnPressed(sender: AnyObject) {
@@ -180,13 +198,15 @@ class ViewController: UIViewController {
     
     func setNewPlayerAValues() {
         setRandAttackPwrPlayer1 = makeRandNumbersPlayerA()
-        //        player1CurrentAttPwr.text = "AttPwr: \(setRandAttackPwrPlayer1)"
+        player1Button.titleLabel!.font = UIFont(name: "HelveticaNeue-Bold", size: 13)
+        player1Button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         player1Button.setTitle("Attack with \(setRandAttackPwrPlayer1) PWR", forState: UIControlState.Normal)
     }
     
     func setNewPlayerBValues() {
         setRandAttackPwrPlayer2 = makeRandNumbersPlayerB()
-        //        player2CurrentAttPwr.text = "AttPwr: \(setRandAttackPwrPlayer2)"
+        player2Button.titleLabel!.font = UIFont(name: "HelveticaNeue-Bold", size: 13)
+        player2Button.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
         player2Button.setTitle("Attack with \(setRandAttackPwrPlayer2)", forState: UIControlState.Normal)
     }
     
@@ -230,12 +250,12 @@ class ViewController: UIViewController {
             player1HealthLabel.text = "Health: \(Int(playerPo.hp + foundBonusPlayer1.1))"
             let player1NewHp = playerPo.hp + foundBonusPlayer1.1
             playerPo = Po(updateHp: player1NewHp)
-            print("View: Added Bonus Player 1: \(foundBonusPlayer1.0) - \(foundBonusPlayer1.1) HP")
-            print("View: Current HP Player  1: \(playerPo.hp)")
-            if foundBonusPlayer1.0 != "Nada" {
+//            print("View: Added Bonus Player 1: \(foundBonusPlayer1.0) - \(foundBonusPlayer1.1) HP")
+//            print("View: Current HP Player  1: \(playerPo.hp)")
+            if foundBonusPlayer1.0 != "NoBonus" {
                 self.player1BonusFoundLabel.fadeOut(completion:{
                     (finished: Bool) -> Void in
-                    self.player1BonusFoundLabel.text = "+ \(self.foundBonusPlayer1.0) - \(self.foundBonusPlayer1.1) HP"
+                    self.player1BonusFoundLabel.text = "\(self.foundBonusPlayer1.0): +\(self.foundBonusPlayer1.1)HP"
                     self.player1BonusFoundLabel.fadeIn()
                     
                     self.player1BonusFoundLabel.fadeOut(completion:{
@@ -252,12 +272,12 @@ class ViewController: UIViewController {
             player2HealthLabel.text = "Health: \(Int(playerShifu.hp + foundBonusPlayer2.1))"
             let player2NewHp = playerShifu.hp + foundBonusPlayer2.1
             playerShifu = Mastershifu(updateHp: player2NewHp)
-            print("View: Added Bonus Player 2: \(foundBonusPlayer2.0) - \(foundBonusPlayer2.1) HP")
-            print("View: Current HP Player  2: \(playerShifu.hp)")
-            if foundBonusPlayer2.0 != "Nada" {
+//            print("View: Added Bonus Player 2: \(foundBonusPlayer2.0) - \(foundBonusPlayer2.1)HP")
+//            print("View: Current HP Player  2: \(playerShifu.hp)")
+            if foundBonusPlayer2.0 != "NoBonus" {
                 self.player2BonusFoundLabel.fadeOut(completion:{
                     (finished: Bool) -> Void in
-                    self.player2BonusFoundLabel.text = "+ \(self.foundBonusPlayer2.0) - \(self.foundBonusPlayer2.1) HP"
+                    self.player2BonusFoundLabel.text = "\(self.foundBonusPlayer2.0): +\(self.foundBonusPlayer2.1) HP"
                     self.player2BonusFoundLabel.fadeIn()
                     
                     self.player2BonusFoundLabel.fadeOut(completion:{
