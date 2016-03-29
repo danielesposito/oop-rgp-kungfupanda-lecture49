@@ -61,7 +61,8 @@
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ke0-1t-zi4">
                                                             <rect key="frame" x="0.0" y="42" width="4" height="23"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -106,7 +107,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="playerPoAttackButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="py5-Tu-c06"/>
+                                            <action selector="player1AttackButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="siq-T6-V8X"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -139,20 +140,21 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="p47-Q1-tcI">
                                                     <rect key="frame" x="8" y="8" width="150" height="65"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMV-a2-FVW" userLabel="Player Shifu">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMV-a2-FVW" userLabel="Player2 Name Label">
                                                             <rect key="frame" x="0.0" y="0.0" width="57" height="23"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
                                                             <color key="textColor" red="0.043137254899999998" green="0.50588235290000005" blue="0.84313725490000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vk1-1h-0Qg" userLabel="Health Shifu">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vk1-1h-0Qg" userLabel="Player2 Health Label">
                                                             <rect key="frame" x="0.0" y="21" width="48" height="23"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSG-lw-1jS" userLabel="AttPwr Shifu">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSG-lw-1jS" userLabel="Player2 Bonus Found Label">
                                                             <rect key="frame" x="0.0" y="42" width="4" height="23"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -197,7 +199,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="playerBAttackButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zeY-WN-pfa"/>
+                                            <action selector="player2AttackButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V2H-O0-emG"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -217,12 +219,19 @@
                                     <action selector="resetGameBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eXf-D5-rc1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ns-U2-gMU">
-                                <rect key="frame" x="266" y="321" width="69" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="TestReset"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EkL-Bv-kVT">
+                                <rect key="frame" x="260" y="317" width="80" height="30"/>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.76078431369999999" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="Za9-2k-sab"/>
+                                    <constraint firstAttribute="height" constant="30" id="tbL-Ui-tby"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="resetGameBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UGl-3t-ger"/>
+                                    <action selector="resetGameBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="72D-Xb-bz3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -231,15 +240,15 @@
                             <constraint firstItem="DJP-sT-nLQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3Kg-N6-ePc"/>
                             <constraint firstAttribute="trailing" secondItem="gaC-1t-JYe" secondAttribute="trailing" constant="20" id="5i1-gl-gq3"/>
                             <constraint firstAttribute="trailing" secondItem="DJP-sT-nLQ" secondAttribute="trailing" id="7WA-jD-2Pe"/>
+                            <constraint firstItem="ejx-zd-lFM" firstAttribute="top" secondItem="EkL-Bv-kVT" secondAttribute="bottom" constant="23" id="9NP-EY-Tme"/>
                             <constraint firstItem="eK5-9y-UqE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CIC-jD-sjc"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ejx-zd-lFM" secondAttribute="bottom" constant="80" id="GPo-p9-kg5"/>
                             <constraint firstItem="xmq-CO-9rA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MYU-JC-M37"/>
                             <constraint firstItem="DJP-sT-nLQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Vl1-IE-n0a"/>
-                            <constraint firstItem="3ns-U2-gMU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WKJ-Vf-nVK"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DJP-sT-nLQ" secondAttribute="bottom" id="ZGW-pF-awR"/>
+                            <constraint firstItem="EkL-Bv-kVT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c1F-Kj-cIX"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xmq-CO-9rA" secondAttribute="bottom" constant="10" id="fLT-rX-agZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eK5-9y-UqE" secondAttribute="bottom" id="fo6-4v-gZ5"/>
-                            <constraint firstItem="ejx-zd-lFM" firstAttribute="top" secondItem="3ns-U2-gMU" secondAttribute="bottom" constant="19" id="gzF-jh-vEi"/>
                             <constraint firstItem="izT-mK-MWR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hEd-7h-H9Y"/>
                             <constraint firstItem="izT-mK-MWR" firstAttribute="top" secondItem="ejx-zd-lFM" secondAttribute="bottom" constant="32" id="kex-gl-m0h"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="izT-mK-MWR" secondAttribute="bottom" constant="48" id="mhA-LY-GQl"/>
@@ -254,14 +263,14 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="player1Button" destination="gyH-1K-wLB" id="rgh-G9-uCz"/>
-                        <outlet property="player1CurrentAttPwr" destination="ke0-1t-zi4" id="tzw-fS-w6Z"/>
-                        <outlet property="player1HealthLabel" destination="f0j-hW-sud" id="wS7-Cm-Mwc"/>
-                        <outlet property="player1NameLabel" destination="Kag-8J-8OV" id="OnE-FO-Q65"/>
-                        <outlet property="player2Button" destination="XfF-WK-GUS" id="2cu-8Y-Tns"/>
-                        <outlet property="player2CurrentAttPwr" destination="HSG-lw-1jS" id="erc-vu-l8i"/>
-                        <outlet property="player2HealthLabel" destination="vk1-1h-0Qg" id="abg-7y-Rja"/>
-                        <outlet property="player2NameLabel" destination="mMV-a2-FVW" id="KP8-rK-RTB"/>
+                        <outlet property="player1BonusFoundLabel" destination="ke0-1t-zi4" id="H7k-tt-ihX"/>
+                        <outlet property="player1Button" destination="gyH-1K-wLB" id="ZkX-4v-Lse"/>
+                        <outlet property="player1HealthLabel" destination="f0j-hW-sud" id="yMs-kD-zMU"/>
+                        <outlet property="player1NameLabel" destination="Kag-8J-8OV" id="LmQ-4j-nef"/>
+                        <outlet property="player2BonusFoundLabel" destination="HSG-lw-1jS" id="Ytv-wj-M1x"/>
+                        <outlet property="player2Button" destination="XfF-WK-GUS" id="jdV-9r-nU4"/>
+                        <outlet property="player2HealthLabel" destination="vk1-1h-0Qg" id="H1l-wX-0gy"/>
+                        <outlet property="player2NameLabel" destination="mMV-a2-FVW" id="taW-Pr-HKj"/>
                         <outlet property="randomQuoteMessage" destination="izT-mK-MWR" id="BiU-0J-7j9"/>
                         <outlet property="resetGamePlayBtn" destination="ejx-zd-lFM" id="d8b-xb-AAe"/>
                     </connections>

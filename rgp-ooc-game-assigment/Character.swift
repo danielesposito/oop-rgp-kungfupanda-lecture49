@@ -11,16 +11,17 @@ import Foundation
 
 class Character {
     
-    private var _hpPlayer1: Int = 0
-    private var _hpPlayer2: Int = 0
-    private var _attackPwrPlayer1: Int = 0
-    private var _attackPwrPlayer2: Int = 0
     
+    private var _hp: Int = 0
+    private var _attackPwr: Int = 10
     private var _graphic: String = "po"
     private var _name: String = "Po"
+    //    private var _bonusName: String = "N"
+    //    private var _bonusScore: Int = 0
     
     var randomAttckNumber: UInt32 = 0
     var randomHealthNumber: UInt32 = 0
+    
     
     
     var funPhrases: [String] {
@@ -31,23 +32,29 @@ class Character {
         
         return ["Noooo ... I dont want to be dead!!"]
     }
-
+    
+    
+    //    init(wonBonusName: String, wonBonusAmount: Int) {
+    //
+    //        _bonusName = wonBonusName
+    //        _bonusScore = wonBonusAmount
+    //    }
     
     struct bonusHpStructure {
         
-       var bonusName: String = ""
-       var bonusScore: Int = 0
+        var bonusName: String = "l"
+        var  bonusScore: Int = 0
         
     }
     
-    let fightBonus1 = bonusHpStructure(bonusName: "Sun Star", bonusScore: 10)
-    let fightBonus2 = bonusHpStructure(bonusName: "Fire Ball", bonusScore: 15)
+    let fightBonus1 = bonusHpStructure(bonusName: "Sun Star", bonusScore: 2)
+    let fightBonus2 = bonusHpStructure(bonusName: "Fire Ball", bonusScore: 5)
     let fightBonus3 = bonusHpStructure(bonusName: "Nada", bonusScore: 0)
-    let fightBonus4 = bonusHpStructure(bonusName: "Lobster Lega", bonusScore: 20)
-    let fightBonus5 = bonusHpStructure(bonusName: "Bamboo Ball", bonusScore: 25)
-    let fightBonus6 = bonusHpStructure(bonusName: "Golden Goose Egg", bonusScore: 30)
-    let fightBonus7 = bonusHpStructure(bonusName: "Onyx Cylinder", bonusScore: 35)
-    let fightBonus8 = bonusHpStructure(bonusName: "SunStar", bonusScore: 50)
+    let fightBonus4 = bonusHpStructure(bonusName: "Lobster Lega", bonusScore: 7)
+    let fightBonus5 = bonusHpStructure(bonusName: "Bamboo Ball", bonusScore: 9)
+    let fightBonus6 = bonusHpStructure(bonusName: "Golden Goose Egg", bonusScore: 11)
+    let fightBonus7 = bonusHpStructure(bonusName: "Onyx Cylinder", bonusScore: 13)
+    let fightBonus8 = bonusHpStructure(bonusName: "SunStar", bonusScore: 20)
     
     
     var bonusHpItems : [(String,Int)] {
@@ -65,69 +72,62 @@ class Character {
         }
         
     }
-
+    
     func foundBonusHealth() -> (bonusName: String, bonusScore: Int)
     {
-        let randomIndex = Int(arc4random_uniform(UInt32(bonusHpItems.count)))
-        return bonusHpItems[randomIndex]
-        
+        let rand = Int(arc4random_uniform(100)+1)
+            if rand % 3 == 0 {
+                let randomIndex = Int(arc4random_uniform(UInt32(bonusHpItems.count)))
+                return bonusHpItems[randomIndex]
+            } else {
+                let randomIndex = Int(2)
+                return bonusHpItems[randomIndex]
+        }
     }
+    
     
     var name: String {
         get {
             return _name
         }
     }
- 
-    var hpPlayer1: Int {
+    
+    var hp: Int {
         get {
-            return _hpPlayer1
+            return _hp
         }
     }
-    var hpPlayer2: Int {
+    
+    var attackPwr: Int {
         get {
-            return _hpPlayer2
+            return _attackPwr
         }
     }
-    var attackPwrPlayer1: Int {
-        get {
-            return _attackPwrPlayer1
-        }
-    }
-    var attackPwrPlayer2: Int {
-        get {
-            return _attackPwrPlayer2
-        }
-    }
-
+    
     var graphic: String {
         get {
             return _graphic
         }
     }
-
-    init(charName: String, hpPlayer1: Int, attPwrPlayer1: Int, charGraphic: String) {
+    
+    init(charName: String, hp: Int, attPwr: Int, charGraphic: String) {
         _name = charName
-        _hpPlayer1 = hpPlayer1
-        _attackPwrPlayer1 = attPwrPlayer1
+        _hp = hp
+        _attackPwr = attPwr
         _graphic = charGraphic
     }
     
-    init(charName: String, hpPlayer2: Int, attPwrPlayer2: Int, charGraphic: String) {
-        _name = charName
-        _hpPlayer2 = hpPlayer2
-        _attackPwrPlayer2 = attPwrPlayer2
-        _graphic = charGraphic
+    init(updateHp: Int, updAttPwr: Int) {
+        _hp = updateHp
+        _attackPwr = updAttPwr
     }
     
-    init(updateHpPlayer1: Int, updAttPwrPlayer1: Int) {
-        _hpPlayer1 = updateHpPlayer1
-        _attackPwrPlayer1 = updAttPwrPlayer1
+    init(updAttPwr: Int) {
+        _attackPwr = updAttPwr
     }
     
-    init(updateHpPlayer2: Int, updAttPwrPlayer2: Int) {
-        _hpPlayer2 = updateHpPlayer2
-        _attackPwrPlayer2 = updAttPwrPlayer2
+    init(updateHp: Int) {
+        _hp = updateHp
     }
     
     func showFunPhrase() -> String? {
@@ -148,18 +148,11 @@ class Character {
         }
     }
     
-    func collectBonushealthPlayer1(bonusHpPlayer1: Int){
-        self._hpPlayer1 = self._hpPlayer1 + bonusHpPlayer1
-        print("Char: Current HP Player 1: \(_hpPlayer1)")
-    }
-    
-    func collectBonushealthPlayer2(bonusHpPlayer2: Int){
-        self._hpPlayer2 = self._hpPlayer2 + bonusHpPlayer2
-        print("Char: Current HP Player 2: \(_hpPlayer2)")
-    }
-    
     func makeRandAttPwrNumber() -> UInt32 {
-        randomAttckNumber = arc4random_uniform(50) + 1
+        randomAttckNumber = arc4random_uniform(60) + 1
+        if randomAttckNumber <= 10 {
+            randomAttckNumber = arc4random_uniform(60) + 1
+        }
         return randomAttckNumber
     }
     
@@ -168,26 +161,19 @@ class Character {
         return randomHealthNumber
     }
     
-    func attemptAttackPlayer1(attackPwrPlayer2: Int) {
-        self._hpPlayer1 -= attackPwrPlayer2
+    func collectBonushealth(bonusHp: Int){
+        self._hp = bonusHp
+        //        return true
     }
     
-    func attemptAttackPlayer2(attackPwrPlayer1: Int) {
-        self._hpPlayer2 -= attackPwrPlayer1
-    }
-    var isAlivePlayer1: Bool {
-        get {
-            if hpPlayer1 <= 0 {
-                return false
-            } else {
-                return true
-            }
-        }
+    func attemptAttack(attackPwr: Int) -> Bool {
+        self._hp -= attackPwr
+        return true
     }
     
-    var isAlivePlayer2: Bool {
+    var isAlive: Bool {
         get {
-            if hpPlayer2 <= 0 {
+            if hp <= 0 {
                 return false
             } else {
                 return true
